@@ -1,3 +1,4 @@
 * @anti-koerper/core
 LICENSE @anti-koerper/js-team
 *.md @anti-koerper/testing-team
+*.rs @anti-koerper/rust-team
