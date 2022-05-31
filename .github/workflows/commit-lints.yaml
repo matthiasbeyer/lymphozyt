@@ -1,11 +1,10 @@
-name: gitlint
+name: lint commit messages
 
 on:
-  push:
   pull_request:
 
 jobs:
-  checks:
+  commit-lint:
     runs-on: "ubuntu-latest"
 
     steps:
@@ -30,3 +29,12 @@ jobs:
         fi
         echo "Linting: ${BASE}..HEAD"
         gitlint --commits ${BASE}..HEAD
+
+
+  block-fixup:
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - uses: actions/checkout@v2.0.0
+    - name: Block PRs with fixup commits
+      uses: 13rac1/block-fixup-merge-action@v2.0.0
