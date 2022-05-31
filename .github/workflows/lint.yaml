@@ -14,8 +14,13 @@ jobs:
         ref: ${{ github.even.pull_request.head.sha }} # Checkout pull request HEAD commit instead of merge commit
         fetch-depth: 0 # fetch complete history
 
+    - uses: actions/setup-python@v3
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
     - name: Install gitlint
-      run: sudo apt-get install gitlint
+      run: pip install gitlint
 
     - name: Run gitlint
       run: |
