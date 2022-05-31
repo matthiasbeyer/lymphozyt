@@ -28,5 +28,5 @@ jobs:
         else
           BASE="${GITHUB_BASE_REF}"
         fi
-        echo "Linting: ${BASE}..${GITHUB_HEAD_REF}"
-        gitlint --commits ${BASE}..${GITHUB_HEAD_REF}
+        echo "Linting: ${BASE}..HEAD"
+        gitlint --commits ${BASE}..HEAD
